@@ -1,10 +1,10 @@
 {
-  "name": "ModMail Log Viewer",
-  "description": "A simple webserver to view selfhosted logs",
-  "repository": "https://github.com/kyb3r/logviewer",
+  "name": "Visualizzatore log Modmail (per VincyBot07).",
+  "description": "Un webserver per vedere i log hostati sul MongoDB.",
+  "repository": "https://github.com/VincyBot07/logviewer",
   "env": {
     "MONGO_URI": {
-        "description": "Mongodb connection uri that contains your modmail logs.",
+        "description": "L'URI del tuo MongoDB che conterrà i log.",
         "required": true
         }
     }
