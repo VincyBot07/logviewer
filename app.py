@@ -55,7 +55,7 @@ async def index(request):
 @app.get(prefix + "/raw/<key>")
 @authrequired()
 async def get_raw_logs_file(request, document):
-    """Returns the plain text rendered log entry"""
+    """Ritorna l'ingresso log renderizzato in testo"""
 
     if document is None:
         abort(404)
@@ -68,7 +68,7 @@ async def get_raw_logs_file(request, document):
 @app.get(prefix + "/<key>")
 @authrequired()
 async def get_logs_file(request, document):
-    """Returns the html rendered log entry"""
+    """Ritorna l'ingresso log renderizzato in HTML"""
 
     if document is None:
         abort(404)
