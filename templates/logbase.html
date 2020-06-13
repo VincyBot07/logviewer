@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
-    <title>Log Entry</title>
+    <title>Ingresso log</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width"/>
 
-    <meta content="{{ log_entry.thread_messages | length }} messages {% if log_entry.open %}(Open){% else %}(Closed){% endif %}" property="og:site_name">
-    <meta content="Recipient: {{ log_entry.recipient | string | e }}" property="og:title">
+    <meta content="{{ log_entry.thread_messages | length }} messaggi {% if log_entry.open %}(Aperto){% else %}(Chiuso){% endif %}" property="og:site_name">
+    <meta content="Recipiente: {{ log_entry.recipient | string | e }}" property="og:title">
     <meta content='{{ log_entry.recipient.avatar_url }}' property='og:image'>
-    <meta content='Created {{ log_entry.human_created_at }}' property='og:image'>
+    <meta content='Creato il {{ log_entry.human_created_at }}' property='og:image'>
 
     <link href="/static/css/logstyle.css" rel="stylesheet">
     <link href="/static/css/solarized-dark.css" rel="stylesheet">
@@ -45,9 +45,9 @@
                  alt="avatar">
         </div>
         <div class="info__metadata">
-            <div class="info__guild-name"><span style='color:white'>Thread Logs</span> {% if log_entry.open %}
-                (Open){% else %}(Closed){% endif %}</div>
-            <div title="{{ log_entry.recipient.id }}" class="info__channel-topic tooltip"><span style="color:white">Recipient:
+            <div class="info__guild-name"><span style='color:white'>Log del Thread</span> {% if log_entry.open %}
+                (Aperto){% else %}(Chiuso){% endif %}</div>
+            <div title="{{ log_entry.recipient.id }}" class="info__channel-topic tooltip"><span style="color:white">Recipiente:
                 <b>{{ log_entry.recipient.name | e }}</b></span>#{{ log_entry.recipient.discriminator }}
                 <span class='tooltiptext pre pre--inline'>{{ log_entry.recipient.id }}</span>
             </div>
@@ -89,14 +89,14 @@
                     <span class="chatlog__author-name" title="{{ group.author | string | e }}">{{ group.author.name | e }}</span>
                     {% if group.type == 'thread_message' %}
                     {% if group.author.mod %}
-                        <span class="mod-tag">Reply</span>
+                        <span class="mod-tag">Risposta</span>
                     {% endif %}
                     {% elif group.type == 'anonymous' %}
                     <span class='mod-tag'>Anon</span>
                     {% elif group.type == 'internal' %}
-                    <span class='internal-tag'>Internal</span>
+                    <span class='internal-tag'>Interno</span>
                     {% else %}
-                        <span>took a note</span><span class="system-tag">note</span>
+                        <span>ha messo una nota</span><span class="system-tag">nota</span>
                     {% endif %}
                     <span class="chatlog__timestamp">{{ group.created_at }}</span>
                     {% for message in group.messages %}
@@ -104,7 +104,7 @@
                             <div class="chatlog__content" id="{{ message.id }}">
                                 {{ message.content }}
                                 {% if message.edited %}
-                                <span class="chatlog__edited-timestamp">(edited)</span>
+                                <span class="chatlog__edited-timestamp">(modificato)</span>
                                 {% endif %}
                             </div>
 
@@ -115,7 +115,7 @@
                                     {% if attachment.is_image %}
                                     <img class="chatlog__attachment-thumbnail" src="{{ attachment.url }}" alt="attachment"/>
                                     {% else %}
-                                    Attachment: {{ attachment.filename }}
+                                    Allegato: {{ attachment.filename }}
                                     {% endif %}
                                 </a>
                             </div>
@@ -134,8 +134,8 @@
                     <span class="chatlog__author-name"
                           title="{{ log_entry.closer | string | e }}">{{ log_entry.closer.name }}</span>
                     {% if log_entry.closer.mod %}
-                        <span>closed the thread</span>
-                        <span class="system-tag">System</span>
+                        <span>ha chiuso il thread</span>
+                        <span class="system-tag">Sistema</span>
                     {% endif %}
                     <span class="chatlog__timestamp">{{ log_entry.human_closed_at }}</span>
                     {% if log_entry.close_message %}
