@@ -1,31 +1,26 @@
 <div align="left">
-    <h1>Modmail log viewer</h1>
-    <strong><i>A simple webserver to view your selfhosted modmail logs.</i></strong>
+    <h1>Visualizzatore log per VincyBot07</h1>
+    <strong><i>Un web server semplice per vedere i log del VincyBot07 self-hostato.</i></strong>
     <br>
     <br>
 
 
-<a href="https://heroku.com/deploy?template=https://github.com/kyb3r/logviewer">
+<a href="https://heroku.com/deploy?template=https://github.com/VincyBot07/logviewer">
     <img src="https://img.shields.io/badge/deploy_to-heroku-997FBC.svg?style=for-the-badge" />
 </a>
 
 </div>
 
-## What is this?
+## Che cosa è questo?
 
-In order for you to view your selfhosted logs, you have to deploy this application. Before you deploy the application, create a config var named `MONGO_URI` and put your MongoDB connection URI from the previous section into the value slot. Take the url of this app after you deploy it and input it as a config var `LOG_URL` in the modmail bot app.
+Per vedere i tuoi log hostati da te, devi fare un deploy di questa applicazione. Prima di fare un deploy dell'applicazione, crea una variabile di configurazione chiamata `MONGO_URI` e metti il tuo URI di connessione MongoDB dalla precedente sezione nel campo valore. Prendi l'url di quest'app dopo che hai fatto il deploy e inseriscila come variabile di configurazione `LOG_URL` nell'app bot VincyBot07.
 
-## Updating
+## Aggiornamenti
 
-You can automatically update the logviewer in your Heroku account whenever changes are made to this repo.
+Puoi aggiornare automaticamente il logviewer sul tuo account Heroku quando ulteriori modifiche saranno effettuate a questa repo.
 
-To enable autoupdates, fork this repo and [install the Pull app in your fork](https://github.com/apps/pull). Then go to the Deploy tab in your Heroku account, select GitHub and connect your fork. Turn on auto-deploy for the master branch.
+Per attivare autoaggiornamenti, copia questa repo e [installa l'app Pull sulla tua copia](https://github.com/apps/pull). Poi vai sul tab di Deploy nella tua app Heroku, seleziona GitHub e connetti la tua copia. Attiva l'auto-deploy per il branch master.
 
-## Discord Oauth2 
+## Contribuire
 
-Protecting your logs with a login (Discord Oauth2 support) is a premium feature, only available to [Patrons](https://patreon.com/kyber).
-
-## Contributing
-
-If you can make improvements in the design and presentation of logs, please make a pull request with changes.
-# in traduzione
+Se puoi effettuare migliorie al design e alla presentazione dei log, per favore crea una richiesta pull con i cambiamenti.
