@@ -47,25 +47,25 @@ class User:
 
     @property
     def default_avatar(self):
-        """Returns the default avatar for a given user. This is calculated by the user's discriminator"""
+        """Ritorna l'avatar di default per un utente dato. Questo è calcolato dal discriminatore dell'utente"""
         return DefaultAvatar(int(self.discriminator) % len(DefaultAvatar))
 
     @property
     def default_avatar_url(self):
-        """Returns a URL for a user's default avatar."""
+        """Ritorna un URL per l'avatar predefinito di un utente."""
         return "https://cdn.discordapp.com/embed/avatars/{}.png".format(
             self.default_avatar.value
         )
 
     @property
     def mention(self):
-        """Returns a string that allows you to mention the given user."""
+        """Ritorna una stringa che ti permette di menzionare l'utente dato."""
         return "<@{0.id}>".format(self)
 
     @property
     def created_at(self):
-        """Returns the user's creation time in UTC.
-        This is when the user's discord account was created."""
+        """Ritorna il tempo di creazione dell'utente in UTC.
+        Questo è quando l'utente Discord è stato creato."""
         return snowflake_time(self.id)
 
 
@@ -108,7 +108,7 @@ def authrequired():
                 if str(app.bot_id) != document.get("bot_id"):
                     abort(
                         401,
-                        message="Your account does not have permission to view this page.",
+                        message="Il tuo account non ha permessi per vedere questa pagina.",
                     )
                 whitelist.extend(document.get("oauth_whitelist", []))
 
@@ -121,7 +121,7 @@ def authrequired():
                 return await func(request, document)
 
             abort(
-                401, message="Your account does not have permission to view this page."
+                401, message="Il tuo account non ha permessi per vedere questa pagina."
             )
 
         return wrapper
