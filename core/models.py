@@ -65,14 +65,14 @@ class LogEntry:
     def render_plain_text(self):
         messages = self.messages
         thread_create_time = self.created_at.strftime("%d %b %Y - %H:%M UTC")
-        out = f"Thread created at {thread_create_time}\n"
+        out = f"Thread creato il {thread_create_time}\n"
 
         if self.creator == self.recipient:
             out += f"[R] {self.creator} "
-            out += f"({self.creator.id}) created a Modmail thread. \n"
+            out += f"({self.creator.id}) ha creato un thread Modmail. \n"
         else:
             out += f"[M] {self.creator} "
-            out += f"created a thread with [R] "
+            out += f"ha creato un thread con [R] "
             out += f"{self.recipient} ({self.recipient.id})\n"
 
         out += "────────────────────────────────────────────────\n"
@@ -90,7 +90,7 @@ class LogEntry:
                 base += f"{author}: {message.raw_content}\n"
 
                 for attachment in message.attachments:
-                    base += f"Attachment: {attachment}\n"
+                    base += f"Allegato: {attachment}\n"
 
                 out += base
 
@@ -103,10 +103,10 @@ class LogEntry:
                 out += "────────────────────────────────────────────────\n"
 
             out += f"[M] {self.closer} ({self.closer.id}) "
-            out += "closed the Modmail thread. \n"
+            out += "ha chiuso il thread Modmail. \n"
 
             closed_time = self.closed_at.strftime("%d %b %Y - %H:%M UTC")
-            out += f"Thread closed at {closed_time} \n"
+            out += f"Thread chiuso il {closed_time} \n"
 
         return response.text(out)
 
