@@ -10,7 +10,7 @@
 </a>
 
 </div>
-
+DEPRECATO! Usa [StrapBot](https://github.com/Ergastolator1/StrapBot.git) se vuoi usare un bot usabile e mantenuto. Non richiede il logviewer!
 ## Che cosa è questo?
 
 Per vedere i tuoi log hostati da te, devi fare un deploy di questa applicazione. Prima di fare un deploy dell'applicazione, crea una variabile di configurazione chiamata `MONGO_URI` e metti il tuo URI di connessione MongoDB dalla precedente sezione nel campo valore. Prendi l'url di quest'app dopo che hai fatto il deploy e inseriscila come variabile di configurazione `LOG_URL` nell'app bot VincyBot07.
